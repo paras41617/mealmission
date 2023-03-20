@@ -26,12 +26,15 @@ SECRET_KEY = 'django-insecure-pyf)@)(4%gj0izgx0%sgfw)=evjy8a)fqk#t#e6ii$x$i8$zr&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "http://127.0.0.1:8000/",
-    "http://localhost:8000/",
-]
+# ALLOWED_HOSTS = ['*']
+
+# ALLOWED_HOSTS = [
+#     "http://localhost:3000/",
+#     "127.0.0.1",
+#     "localhost",
+#     "http://127.0.0.1:8000/",
+#     "http://localhost:8000/",
+# ]
 
 
 # Application definition
@@ -43,9 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication'
-    "rest_framework",
-    "corsheaders",
+    'authentication',
+    'rest_framework',
+    'corsheaders',
     "rest_framework_simplejwt.token_blacklist",
     "rest_framework_simplejwt",
 ]
@@ -58,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -133,10 +137,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
+
 CORS_ORIGIN_WHITELIST = (
-    "http://localhost:8000",
-    "http://localhost:3000",
+    'http://localhost:3000',
 )
+
 
 # AUTH_USER_MODEL = "authentication.User"
 
@@ -166,4 +173,4 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
-SITE_ID = 1
+# SITE_ID = 1

@@ -1,3 +1,60 @@
-#home_page_top_buttons{
-    display: flex;
+.mealmission{
+    margin: auto;
+    font-size: 5rem;
+    color:white;
+    position: sticky;
+
 }
+
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: azure;
+    background-color: black;
+    padding-bottom: 5%;
+
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 30rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    border-style: solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }

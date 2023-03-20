@@ -4,10 +4,12 @@ from rest_framework_simplejwt.views import TokenBlacklistView
 from rest_framework_simplejwt.views import TokenVerifyView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt import views as jwt_views
+# from .views import CreateUserAPIView
 from .views import CreateUserAPIView
 
 urlpatterns = [
-    path("create_user/", CreateUserAPIView.as_view()),
+    path("create_user/", CreateUserAPIView),
+    # path("create_user/", CreateUserAPIView.as_view()),
     path("logout/", TokenBlacklistView.as_view()),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path(

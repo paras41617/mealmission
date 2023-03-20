@@ -3,14 +3,32 @@ import '../styles/home.css'
 
 class Home extends React.Component {
 
-    // redirect_signup(){
-    //     window.location.href = '/signup'
-    // }
+	constructor(props){
+		super(props)
+		this.state = {
+			food_days : [],
+			instant_food : []
+		}
+	}
+
+	componentDidMount(){
+		var token = localStorage.getItem('token')
+		if(token == null || token === undefined || token === "undefined"){
+			window.location.href = "/signup"
+		}
+	}
 
 	render() {
 		return (
             <div>
-                {/* <button onClick={this.redirect_signup}>Signup</button>  */}
+                <div id='home_page_top_buttons'>
+					<button>Food 30 days</button>
+					<button>Instant Food</button>
+					<button>Add donation</button>
+				</div>
+				<div>
+
+				</div>
             </div>
 		);
 	}
