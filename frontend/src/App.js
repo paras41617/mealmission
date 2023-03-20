@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import Type from './components/Type';
 import Login from './components/Login';
+import CreateDonation from './components/CreateDonation';
 class App extends React.Component {
 
 	render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
 					<Route exact path="/type" element={<Type/>} />
 					<Route exact path="/login" element={<Login/>} />
 					<Route exact path="/donation" element={<Login/>} />
+					<Route exact path="/donation_create" element={<CreateDonation/>} />
 				</Routes>
 			</Router>
 		);
