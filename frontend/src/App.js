@@ -14,6 +14,7 @@ class App extends React.Component {
 					<Route exact path="/signup" element={<Signup/>} />
 					<Route exact path="/type" element={<Type/>} />
 					<Route exact path="/login" element={<Login/>} />
+					<Route exact path="/donation" element={<Login/>} />
 				</Routes>
 			</Router>
 		);
