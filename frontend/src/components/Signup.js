@@ -51,7 +51,7 @@ class Signup extends Component {
         <h1 className="mealmission">MealMiSSion</h1>
         <h1>Sign Up</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="form-group">
+          <div className="form-group-signup">
             <label htmlFor="username">Username</label>
             <input
               type="text"
@@ -61,7 +61,7 @@ class Signup extends Component {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group-signup">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -71,7 +71,7 @@ class Signup extends Component {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group-signup">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -81,7 +81,7 @@ class Signup extends Component {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group-signup">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               type="password"
