@@ -33,15 +33,18 @@ class Signup extends Component {
       fetch("http://127.0.0.1:8000/authentication/create_user/", requestOptions)
         .then((data) => data.json())
         .then((result) => {
-			if(result['message'] === 'success'){
-				window.location.href = '/login'
-			}
-			else{
-				alert("Something is wrong, Try Again")
-			}
-		});
+          if (result["message"] === "success") {
+            window.location.href = "/login";
+          } else {
+            alert("Something is wrong, Try Again");
+          }
+        });
     }
   };
+
+  redirect_login(){
+    window.location.href = '/login'
+  }
 
   render() {
     const { username, email, password, confirmPassword } = this.state;
@@ -91,7 +94,10 @@ class Signup extends Component {
               required
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <div  style={{ display: 'flex'}}>
+            <button type="submit">SignUp</button>
+            <button style={{marginLeft:"5%"}} onClick={this.redirect_login}>Login</button>
+          </div>
         </form>
       </div>
     );
