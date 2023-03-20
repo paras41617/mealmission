@@ -1,29 +1,52 @@
-import React, { Component } from 'react';
-import '../styles/signup.css';
+import React, { Component } from "react";
+import "../styles/signup.css";
 
 class Signup extends Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
-  handleFormSubmit = e => {
+  handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    if (this.state.password !== this.state.confirmPassword) {
+      alert("Password is not matching");
+      window.location.reload();
+    } else {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: this.state.username,
+          email: this.state.email,
+          password: this.state.password,
+        }),
+      };
+      console.log(requestOptions);
+      fetch("http://127.0.0.1:8000/authentication/create_user/", requestOptions)
+        .then((data) => data.json())
+        .then((result) => {
+			if(result['message'] === 'success'){
+				window.location.href = '/login'
+			}
+			else{
+				alert("Something is wrong, Try Again")
+			}
+		});
+    }
   };
 
   render() {
     const { username, email, password, confirmPassword } = this.state;
 
     return (
-    
       <div className="signup-page">
         <h1 className="mealmission">MealMiSSion</h1>
         <h1>Sign Up</h1>
