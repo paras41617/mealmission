@@ -11,20 +11,30 @@ class Home extends React.Component {
 		}
 	}
 
-	componentDidMount(){
-		var token = localStorage.getItem('token')
-		if(token == null || token === undefined || token === "undefined"){
-			window.location.href = "/signup"
-		}
-	}
+	// componentDidMount(){
+	// 	var token = localStorage.getItem('token')
+	// 	if(token == null || token === undefined || token === "undefined"){
+	// 		window.location.href = "/signup"
+	// 	}
+	// }
 
 	render() {
 		return (
-            <div>
+            <div className="bigbox">
                 <div id='home_page_top_buttons'>
-					<button>Food 30 days</button>
-					<button>Instant Food</button>
-					<button>Add donation</button>
+					<button className="food30days">Food 30 days</button>
+					<button className="instantfood">Instant Food</button>
+					<button className="adddonation">Add donation</button>
+				</div>
+				<div className="bottombox">
+					<span className="bottombox-name">
+						shubham
+					</span>
+					<span className="bottombox-type">type
+					</span>
+					<span className="bottombox-category">category</span>
+					<span className="bottombox-location">location</span>
+					<button className="buy">Buy</button>
 				</div>
 				<div>
 
