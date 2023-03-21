@@ -71,7 +71,6 @@ class PackageDonationsView(APIView):
                         "location": donation__["location"],
                     }
                 )
-        print(ans)
         return JsonResponse({"donations": ans}, status=200)
 
 
@@ -131,10 +130,8 @@ class UserDonationsView(APIView):
     def post(self, request):
         if request.method == "POST":
             username = json.loads(request.body)["username"]
-            print("user : ", username)
             user_ = User.objects.get(username=username)
             donations = user_.donations.all()
-            print(donations)
             ans = []
             for donation__ in donations:
                 flag = False
@@ -178,7 +175,6 @@ class UserDonationsView(APIView):
                             "order": "None",
                         }
                     )
-            print(ans)
             return JsonResponse({"donations": ans}, status=200)
         else:
             return JsonResponse({"Error": "Method Not Allowed"}, status=405)

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/home.css";
+import CreateDonation from "./CreateDonation";
 
 class Home extends React.Component {
   constructor(props) {
@@ -154,7 +155,7 @@ class Home extends React.Component {
             </button>
           </div>
           {this.state.add
-            ? null
+            ? <CreateDonation />
             : this.state.instant
             ? this.state.loaded
               ? this.state.instant_food.map((donation, i) => (
