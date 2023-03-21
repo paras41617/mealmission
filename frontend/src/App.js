@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import Type from './components/Type';
 import Login from './components/Login';
 import CreateDonation from './components/CreateDonation';
+import Donation from './components/Donation'
 class App extends React.Component {
 
 	render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
 					<Route exact path="/signup" element={<Signup/>} />
 					<Route exact path="/type" element={<Type/>} />
 					<Route exact path="/login" element={<Login/>} />
-					<Route exact path="/donation" element={<Login/>} />
+					<Route exact path="/donations" element={<Donation/>} />
 					<Route exact path="/donation_create" element={<CreateDonation/>} />
 				</Routes>
 			</Router>

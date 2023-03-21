@@ -28,6 +28,7 @@ class Login extends Component {
       .then((result) => {
         localStorage.setItem("token", result["access"]);
         localStorage.setItem("refresh", result["refresh"]);
+        localStorage.setItem('username' , this.state.username)
         window.location.href = "/";
       });
   };
