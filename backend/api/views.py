@@ -36,6 +36,7 @@ class CreateDonationView(APIView):
                 veg=ans,
                 location=location_,
                 contributor=contributor_,
+                booked=False
             )
             donation.save()
             user_.donations.add(donation)
